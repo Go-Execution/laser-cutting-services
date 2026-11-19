@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="steelPlate" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#27272a" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+    <linearGradient id="laserBeam" x1="18" y1="38" x2="41" y2="9" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="65%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+  <!-- Chamfered Heavy Steel Plate -->
+  <path
+    d="M11 4H37L44 11V37L37 44H11L4 37V11L11 4Z"
+    fill="url(#steelPlate)"
+    stroke="#3f3f46"
+    stroke-width="1.5"
+  />
+  <!-- Inner Precision Chamfer Line -->
+  <path
+    d="M12.5 7.5H35.5L40.5 12.5V35.5L35.5 40.5H12.5L7.5 35.5V12.5L12.5 7.5Z"
+    stroke="#27272a"
+    stroke-width="1"
+  />
+  <!-- Weld Table 5/8" Fixture Grid Holes -->
+  <circle cx="15.5" cy="16.5" r="2.3" fill="#e4e4e7" />
+  <circle cx="24" cy="16.5" r="2.3" fill="#e4e4e7" />
+  <circle cx="15.5" cy="25" r="2.3" fill="#e4e4e7" />
+  <circle cx="15.5" cy="33.5" r="2.3" fill="#a1a1aa" />
+  <!-- Crimson CNC Laser Kerf Cut & Spark Tip -->
+  <path
+    d="M21 37L38 11"
+    stroke="url(#laserBeam)"
+    stroke-width="3.6"
+    stroke-linecap="round"
+  />
+  <circle cx="38" cy="11" r="2.6" fill="#fde68a" />
+</svg>
