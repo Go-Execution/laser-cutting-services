@@ -16,6 +16,7 @@ import {
   type DivisionKey,
   type GalleryItem,
 } from '../data/catalog';
+import { WatermarkLayer } from './WatermarkLayer';
 
 interface LaserCuttingSectionProps {
   onOpenLightbox: (item: GalleryItem) => void;
@@ -68,6 +69,7 @@ export function LaserCuttingSection({ onOpenLightbox, onOpenQuote }: LaserCuttin
         className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-primary-600/10 blur-[120px]"
         aria-hidden="true"
       />
+      <WatermarkLayer variant="dark" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

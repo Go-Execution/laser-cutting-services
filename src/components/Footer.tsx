@@ -1,6 +1,7 @@
 import { ArrowUp } from 'lucide-react';
 import type { DivisionKey } from '../data/catalog';
 import { BrandLogo } from './BrandLogo';
+import { WatermarkLayer } from './WatermarkLayer';
 
 interface FooterProps {
   onScrollTo: (target: string) => void;
@@ -11,8 +12,9 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 export function Footer({ onScrollTo, onOpenQuote }: FooterProps) {
   return (
-    <footer className="border-t border-base-200 bg-white text-base-700">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden border-t border-base-200 bg-white text-base-700">
+      <WatermarkLayer variant="light" />
+      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12">
           {/* Brand Column */}
           <div className="md:col-span-5">

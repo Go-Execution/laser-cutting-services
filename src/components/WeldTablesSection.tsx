@@ -15,6 +15,7 @@ import {
   type DivisionKey,
   type GalleryItem,
 } from '../data/catalog';
+import { WatermarkLayer } from './WatermarkLayer';
 
 interface WeldTablesSectionProps {
   onOpenLightbox: (item: GalleryItem) => void;
@@ -51,9 +52,10 @@ export function WeldTablesSection({ onOpenLightbox, onOpenQuote }: WeldTablesSec
   return (
     <section
       id="weld-tables"
-      className="relative border-t border-base-200 bg-white py-20 lg:py-28 scroll-mt-28"
+      className="relative overflow-hidden border-t border-base-200 bg-white py-20 lg:py-28 scroll-mt-28"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <WatermarkLayer variant="light" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header (Signature Texas Metal Works Layout) */}
         <motion.div
           initial={{ opacity: 0, y: 22 }}

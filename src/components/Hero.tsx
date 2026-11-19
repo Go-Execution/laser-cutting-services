@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, CheckCircle2, Crosshair, Grid3X3, Sparkles, Maximize2 } from 'lucide-react';
 import { HERO_SLIDES, ALL_GALLERY_ITEMS, type DivisionKey, type GalleryItem } from '../data/catalog';
+import { WatermarkLayer } from './WatermarkLayer';
 
 interface HeroProps {
   onScrollTo: (target: string) => void;
@@ -51,6 +52,7 @@ export function Hero({ onScrollTo, onOpenQuote, onOpenLightbox }: HeroProps) {
         className="pointer-events-none absolute -bottom-32 left-[-10%] h-[420px] w-[420px] rounded-full bg-accent-500/10 blur-[120px]"
         aria-hidden="true"
       />
+      <WatermarkLayer variant="dark" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">

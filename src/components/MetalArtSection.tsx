@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Maximize2, ArrowUpRight, Palette, CheckCircle2 } from 'lucide-react';
 import { METAL_ART_ITEMS, type DivisionKey, type GalleryItem } from '../data/catalog';
+import { WatermarkLayer } from './WatermarkLayer';
 
 interface MetalArtSectionProps {
   onOpenLightbox: (item: GalleryItem) => void;
@@ -33,9 +34,10 @@ export function MetalArtSection({ onOpenLightbox, onOpenQuote }: MetalArtSection
   return (
     <section
       id="metal-art"
-      className="relative border-t border-base-200 bg-base-50 py-20 lg:py-28 scroll-mt-28"
+      className="relative overflow-hidden border-t border-base-200 bg-base-50 py-20 lg:py-28 scroll-mt-28"
     >
       <div className="pointer-events-none absolute inset-0 dot-grid-light opacity-50" aria-hidden="true" />
+      <WatermarkLayer variant="light" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header + Filter Pills */}

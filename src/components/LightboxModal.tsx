@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { ALL_GALLERY_ITEMS, type DivisionKey, type GalleryItem } from '../data/catalog';
+import { WatermarkLayer } from './WatermarkLayer';
 
 interface LightboxModalProps {
   item: GalleryItem | null;
@@ -66,18 +67,19 @@ export function LightboxModal({ item, onClose, onSelect, onOpenQuote }: Lightbox
             </button>
 
             {/* Image Display */}
-            <div className="relative flex flex-1 items-center justify-center bg-black p-4 sm:p-6 lg:min-h-[520px]">
+            <div className="relative flex flex-1 items-center justify-center overflow-hidden bg-black p-4 sm:p-6 lg:min-h-[520px]">
               <img
                 src={item.image}
                 alt={item.title}
                 className="max-h-[55vh] w-auto max-w-full rounded-lg object-contain lg:max-h-[80vh]"
               />
+              <WatermarkLayer variant="dark" zIndexClass="z-10" />
 
               <button
                 type="button"
                 onClick={goPrev}
                 aria-label="Previous Image"
-                className="absolute left-3 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-base-950/80 text-white transition-colors hover:bg-primary-600 cursor-pointer"
+                className="absolute left-3 top-1/2 z-20 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-base-950/80 text-white transition-colors hover:bg-primary-600 cursor-pointer"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -85,12 +87,12 @@ export function LightboxModal({ item, onClose, onSelect, onOpenQuote }: Lightbox
                 type="button"
                 onClick={goNext}
                 aria-label="Next Image"
-                className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-base-950/80 text-white transition-colors hover:bg-primary-600 cursor-pointer"
+                className="absolute right-3 top-1/2 z-20 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-base-950/80 text-white transition-colors hover:bg-primary-600 cursor-pointer"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
 
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-base-950/80 px-3 py-1 font-mono text-[11px] text-base-300">
+              <div className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-base-950/80 px-3 py-1 font-mono text-[11px] text-base-300">
                 {currentIndex + 1} / {ALL_GALLERY_ITEMS.length}
               </div>
             </div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Crosshair, Grid3X3, Sparkles } from 'lucide-react';
+import { WatermarkLayer } from './WatermarkLayer';
 
 interface DivisionStripProps {
   onScrollTo: (target: string) => void;
@@ -43,8 +44,9 @@ const DIVISIONS = [
 
 export function DivisionStrip({ onScrollTo }: DivisionStripProps) {
   return (
-    <section className="relative border-b border-base-200 bg-white py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden border-b border-base-200 bg-white py-16 lg:py-20">
+      <WatermarkLayer variant="light" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header (TMW "Configure Your Setup" Style) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

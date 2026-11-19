@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Crosshair, Grid3X3, Sparkles, Send } from 'lucide-react';
 import type { DivisionKey } from '../data/catalog';
+import { WatermarkLayer } from './WatermarkLayer';
 
 interface QuoteSectionProps {
   onScrollTo: (target: string) => void;
@@ -30,6 +31,7 @@ export function QuoteSection({ onScrollTo }: QuoteSectionProps) {
         className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-primary-600/15 blur-[130px]"
         aria-hidden="true"
       />
+      <WatermarkLayer variant="dark" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12">
